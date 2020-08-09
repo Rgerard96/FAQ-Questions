@@ -1,0 +1,326 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.5rem;
+  width: 100vw;
+  height: fit-content;
+  overflow-x: hidden;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  line-height: 2.2rem;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+
+h2{
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.overlay{
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+.overlay-show{
+  display: inline-block;
+}
+
+.container{
+  max-width: 130rem;
+  margin: 3rem 4.5rem 4rem;
+}
+
+.nav-bar{
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+
+.logo{
+  margin-right: 4rem;
+  font-size: 2.5rem;
+  color: #0a67f1;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.phone{
+  color: black;
+  font-weight: 500;
+}
+.nav-items{
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+
+.nav-items ul{
+  display: flex;
+}
+.nav-items ul li{
+  text-decoration: none;
+  list-style-type: none;
+  margin-left: 4rem;
+}
+.burger-menu{
+  height: 2.2rem;
+  display: none;
+  position: absolute;
+  right: 0;
+  padding-right: 2rem;
+}
+
+.burger-line{
+  display: none;
+  width: 3rem;
+  height: .4rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
+  border-radius: 1rem;
+  transition: all .5s;
+  position: relative;
+  margin-bottom: .5rem;
+}
+
+
+.content-section{
+  display: flex;
+  width: 100%;
+}
+
+.info-section{
+  width: 30%;
+}
+
+.text{
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 2.2rem;
+}
+
+.new-line{
+  display: block;
+}
+
+.faqs-section{
+  width: 50%;
+}
+
+.text-description{
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+.question-answer{
+  margin-top: 1rem;
+  background-color: rgba(10, 102, 241, 0.06);
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.15);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+}
+
+.question-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .5s;
+  cursor: pointer;
+}
+.question-header-border{
+  padding-bottom: 2rem;
+  border-bottom: .08rem solid rgba(0, 0, 0, 0.4);;
+}
+
+.question{
+  transition: all .5s;
+}
+
+.question-color{
+  color: rgb(0, 0, 0);
+}
+
+.fas{
+  color: #0a67f1;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.answer{
+  margin-top: 2rem;
+  display: none;
+  padding-right: 1.5rem;
+}
+.answer-display{
+  display: block;
+}
+
+
+.fas-rotate{
+  transform: rotate(-180deg);
+}
+
+
+@media screen and (max-width: 1000px) {
+  .faqs-section{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  body{
+    font-size: 1.4rem;
+  }
+  
+  h2{
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .container{
+    margin: 2rem 1.5rem 3rem;
+  }
+  .nav-bar{
+    margin-bottom: 6rem;
+  }
+  .logo{
+    padding-left: 1.5rem;
+    font-size: 2.2rem;
+  }
+  .phone{
+    display: none;
+  }
+  .nav-items ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nav-items ul li{
+    margin: 0 auto 5rem;
+    cursor: pointer;
+  }
+  .nav-items ul li:hover{
+    color: white;
+  }
+  .nav-items{
+    display: none;
+    height: 100vh;
+    width: 55%;
+    top: -2rem;
+    right: -1.5rem;
+    font-size: 2.3rem;
+    background-color: black;
+    color: #0a67f1;
+    justify-content: flex-end;
+    padding: 10rem 3rem 0 3rem;
+    z-index: 4;
+  }
+  .nav-items-show{
+    display: block;
+    transition: all 2s;
+    animation: navAnimation .5s both;
+  }
+
+  @keyframes navAnimation{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  .burger-menu{
+    z-index: 5;
+    cursor: pointer;
+    display: initial;
+  }
+
+  .burger-line{
+    display: block;
+  }
+
+
+  .first-burger-line{
+    -webkit-animation: firstLine .3s 0.01s both;
+    animation: firstLine .3s 0.01s both;
+  }
+  .second-burger-line{
+    -webkit-animation: secondLine .3s 0.01s both;
+    animation: secondLine .3s 0.01s both;
+  }
+  .third-burger-line{
+    -webkit-animation: thirdLine .3s 0.01s both;
+    animation: thirdLine .3s 0.01s both;
+  }
+  
+  @keyframes firstLine{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      margin-top: 1rem;
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes secondLine{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      margin-top: -1rem;
+      position: absolute;
+      transform: rotate(-45deg);
+    }
+  }
+  @keyframes thirdLine{
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity: -1;
+    }
+  }
+
+  .switch-color{
+    background-color: white;
+  }
+
+  .content-section{
+    flex-direction: column;
+  }
+  
+  .info-section{
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 0 1.5rem;
+  }
+  .faqs-section{
+    width: 100%;
+  }
+  .text-description{
+    padding: 0 1.5rem;
+  }
+  .question-answer{
+    margin-top: 1rem;
+    background-color: rgba(10, 102, 241, 0.06);
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+  }
+  .fas{
+    margin-left: 1rem;
+  }
+}
